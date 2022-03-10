@@ -1,0 +1,21 @@
+<script src="../../app.component.spec.ts"></script><h1 mat-dialog-title>Add Entry</h1>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput [(ngModel)]="data.name" required>
+  </mat-form-field>
+</div>
+<div mat-dialog-content>
+  <mat-form-field appearance="fill">
+    <mat-label>Number</mat-label>
+    <input matInput [(ngModel)]="data.number" required>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <span style="padding: 5px">
+     <button class="btn btn-secondary" mat-button (click)="onNoClick()">Cancel</button>
+  </span>
+  <span style="padding: 5px">
+  <button  class="btn btn-primary" mat-button [mat-dialog-close]="data" cdkFocusInitial>Ok</button>
+  </span>
+</div>

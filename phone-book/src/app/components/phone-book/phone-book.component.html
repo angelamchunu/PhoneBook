@@ -1,0 +1,33 @@
+<div *ngIf="errorMessage!=null" class="alert alert-danger" role="alert">
+  {{errorMessage}}
+</div>
+
+<div class="container mt-5">
+  <h2>My PhoneBook</h2>
+  <button class="btn btn-secondary entry-btn" (click)="openDialog()">
+    Add Entry
+  </button>
+
+  <div class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Search..."
+      [(ngModel)]="filterTerm"
+    />
+  </div>
+  <table class="table table-striped">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Number</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let entry of entries | filter: filterTerm">
+      <td>{{ entry.name }}</td>
+      <td>{{ entry.number }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
